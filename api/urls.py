@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.getData)
+    path('', views.getData),
+    path('add/', views.addArticle),
 ]
