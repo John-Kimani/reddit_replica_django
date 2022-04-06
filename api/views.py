@@ -1,7 +1,10 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from reddit.models import Article
+from .sterillizers import ArticleSerializer
 
 @api_view(['GET'])
 def getData(request):
-    category = {'name':'Movies', 'genre':'action'}
-    return Response(category)
+    articles = Article.objects.all()
+    serializer = ArticleSerializer(articles, many=True)
+    return Response(serializer.data)
