@@ -1,0 +1,31 @@
+{% extends 'reddit/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- empty -->
+            </div>
+            <div class="col-md-6">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom md-4">Join Today</legend>
+                        {{ form.as_p }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Already have an account? <a href="#" class="ml-2">LogIn</a>
+                    </small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <!-- empty -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
