@@ -5,4 +5,4 @@ def index(request):
     '''
     View funtion for index page
     '''
-    return render(request, 'index.html')
+    return render(request, 'reddit/index.html')

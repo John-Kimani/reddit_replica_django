@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reddit',
     'rest_framework',
+    'users.apps.UsersConfig',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
