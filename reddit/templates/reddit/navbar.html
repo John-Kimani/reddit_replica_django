@@ -34,22 +34,27 @@
       </div>
       <div class="navbar-right mr-auto">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Sign UP</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'post' %}">post</a>
+              <a class="nav-link" href="{% url 'post' %}">post</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'add' %}">add</a>
             </li>
-
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Sign UP</a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>
